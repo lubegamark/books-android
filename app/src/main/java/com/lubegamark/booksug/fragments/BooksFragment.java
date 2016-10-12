@@ -1,4 +1,4 @@
-package com.lubegamark.booksug;
+package com.lubegamark.booksug.fragments;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -7,28 +7,28 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
-import java.util.ArrayList;
+import com.lubegamark.booksug.adapters.BooksAdapter;
+import com.lubegamark.booksug.R;
 
 /**
  * A placeholder fragment containing a simple view.
  */
-public class MainActivityFragment extends Fragment {
+public class BooksFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private View rootView;
 
-    public MainActivityFragment() {
+    public BooksFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        rootView =  inflater.inflate(R.layout.fragment_main, container, false);
+        rootView =  inflater.inflate(R.layout.fragment_books, container, false);
 
 
         String[] myDataset = new String[]{"Java" , "Scala" , "Groovy"};
@@ -44,7 +44,7 @@ public class MainActivityFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        mAdapter = new MyAdapter(myDataset);
+        mAdapter = new BooksAdapter(myDataset);
         mRecyclerView.setAdapter(mAdapter);
 
         return rootView;
